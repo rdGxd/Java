@@ -1,4 +1,4 @@
-package EstruturaSequencial.aula1.ex;
+package EstruturaSequencial.aula1_SaídaDeDadosJava.ex;
 
 import java.util.Locale;
 
