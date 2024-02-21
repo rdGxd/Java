@@ -1,4 +1,4 @@
-package EstruturaRepetitivas.ex;
+package EstruturaRepetitivas.While.ex;
 
 import java.util.Locale;
 import java.util.Scanner;
