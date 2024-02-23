@@ -3,7 +3,7 @@ package OutrosTopicos;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Aual03 {
+public class Aula03 {
   public static void aula03(String[] args) {
     Locale.setDefault(Locale.US);
     Scanner sc = new Scanner(System.in);
