@@ -3,37 +3,25 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Triangle;
+import utils.Calculator;
 
 public class Program {
+
   public static void main(String[] args) throws Exception {
     Locale.setDefault(Locale.US);
     Scanner sc = new Scanner(System.in);
 
-    Triangle x, y;
-    x = new Triangle();
-    y = new Triangle();
+    System.out.print("Enter radius: ");
+    double radius = sc.nextDouble();
 
-    System.out.println("Enter the measures of triangle X: ");
-    x.a = sc.nextDouble();
-    x.b = sc.nextDouble();
-    x.c = sc.nextDouble();
-    System.out.println("Enter the measures of triangle Y: ");
-    y.a = sc.nextDouble();
-    y.b = sc.nextDouble();
-    y.c = sc.nextDouble();
+    double c = Calculator.circumFerence(radius);
+    double v = Calculator.volume(radius);
 
-    double areaX = x.area();
-    double areaY = y.area();
+    System.out.printf("Circumference: %.2f%n", c);
+    System.out.printf("Volume: %.2f%n", v);
+    System.out.printf("PI value: %.2f%n", Calculator.PI);
 
-    System.out.printf("Triangle X area: %.4f%n", areaX);
-    System.out.printf("Triangle Y area: %.4f%n", areaY);
-
-    if (areaX > areaY) {
-      System.out.println("Larger area: X");
-    } else {
-      System.out.println("Larger area: Y");
-    }
     sc.close();
   }
+
 }
