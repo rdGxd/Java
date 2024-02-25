@@ -5,12 +5,17 @@ public class Product {
   public double price;
   public int quantity;
 
+  // Construtor padrão
+  public Product() {}
+
+  // Sobrecarga
   public Product(String name, double price, int quantity) {
     this.name = name;
     this.price = price;
     this.quantity = quantity;
   }
 
+  // Sobrecarga com argumento opcional
   public Product(String name, double price) {
     this.name = name;
     this.price = price;
