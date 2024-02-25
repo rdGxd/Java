@@ -1,12 +1,14 @@
 package entities;
 
 public class Product {
-  public String name;
-  public double price;
-  public int quantity;
+  // Encapsulamento
+  private String name;
+  private double price;
+  private int quantity;
 
   // Construtor padrão
-  public Product() {}
+  public Product() {
+  }
 
   // Sobrecarga
   public Product(String name, double price, int quantity) {
@@ -22,10 +24,36 @@ public class Product {
     // quantity = 0; // OPCIONAL
   }
 
+  // Alterando o nome do produto
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  // Pegando o nome do produto
+  public String getName() {
+    return name;
+  }
+
+  // Alterando o preço de um produto
+  public void setPrice(double price) {
+    this.price = price;
+  }
+
+  // Exibindo o preço do produto
+  public double getPrice() {
+    return price;
+  }
+
+  // Pegando a quantidade do produto
+  public int getQuantity() {
+    return quantity;
+  }
+
   public double totalValueInStock() {
     return price * quantity;
   }
 
+  // A quantidade do produto só vai mudar quando tiver uma entrada ou uma saída
   public void addProducts(int quantity) {
     this.quantity += quantity;
   }
