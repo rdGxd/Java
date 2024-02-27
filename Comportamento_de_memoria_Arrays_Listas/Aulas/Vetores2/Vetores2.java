@@ -1,10 +1,6 @@
-import java.util.Locale;
-import java.util.Scanner;
-
-import entities.Product;
-
-public class App {
-  public static void main(String[] args) throws Exception {
+public class Vetores2 {
+  // VETOR DO OBJETO TIPO CLASSE
+  public static void vetores2(String[] args) throws Exception {
     Locale.setDefault(Locale.US);
     Scanner sc = new Scanner(System.in);
 
