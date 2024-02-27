@@ -11,7 +11,7 @@ public class App {
     int n = sc.nextInt();
     Product[] vect = new Product[n];
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < vect.length; i++) {
       sc.nextLine();
       String name = sc.nextLine();
       double price = sc.nextDouble();
@@ -24,7 +24,7 @@ public class App {
       sum += vect[i].getPrice();
     }
 
-    System.out.printf("MEDIA: %.2f%n", sum / n);
+    System.out.printf("MEDIA: %.2f%n", sum / vect.length);
     sc.close();
   }
 }
