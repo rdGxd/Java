@@ -8,9 +8,9 @@ public class App {
 
     System.out.print("Quantos estudantes vão alugar os quartos? ");
     int n = sc.nextInt();
-    String[] nome = new String[9];
-    String[] email = new String[9];
-    int[] quartos = new int[9];
+    String[] nome = new String[10];
+    String[] email = new String[10];
+    int[] quartos = new int[10];
 
     for (int i = 0; i < n; i++) {
       sc.nextLine();
