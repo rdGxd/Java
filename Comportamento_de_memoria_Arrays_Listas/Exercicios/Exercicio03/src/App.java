@@ -41,7 +41,6 @@ public class App {
     for (int i = 0; i < vect.length; i++) {
       if (vect[i].getIdade() < 16) {
         System.out.println(vect[i].getName());
-
       }
     }
 
