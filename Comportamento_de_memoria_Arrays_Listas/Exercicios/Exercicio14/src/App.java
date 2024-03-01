@@ -6,7 +6,7 @@ public class App {
     Locale.setDefault(Locale.US);
     Scanner sc = new Scanner(System.in);
 
-    System.out.println("Digite um número de linhas");
+    System.out.println("Digite um número de linhas e colunas");
     int m = sc.nextInt();
     int n = sc.nextInt();
     int[][] mat = new int[m][n];
@@ -26,7 +26,6 @@ public class App {
       for (int j = 0; j < mat[i].length; j++) {
         if (mat[i][j] == x) {
           System.out.printf("Position: %d,%d%n", i, j);
-          System.out.println("Position " + i + "," + j + ":");
           if (j > 0) {
             System.out.println("Left: " + mat[i][j - 1]);
           }
