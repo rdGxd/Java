@@ -1,12 +1,16 @@
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class App {
   public static void main(String[] args) throws Exception {
     // DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    DateTimeFormatter fmt4 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    DateTimeFormatter fmt5 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
 
     LocalDate d01 = LocalDate.now();
     LocalDateTime d02 = LocalDateTime.now();
@@ -23,6 +27,12 @@ public class App {
     LocalDate d10 = LocalDate.of(2022, 7, 20);
     LocalDateTime d11 = LocalDateTime.of(2022, 7, 20, 1, 30, 0);
 
+    // Convertendo uma data global para uma data local
+    LocalDate r1 = LocalDate.ofInstant(d06, ZoneId.systemDefault());
+    LocalDate r2 = LocalDate.ofInstant(d06, ZoneId.of("Portugal"));
+    LocalDateTime r3 = LocalDateTime.ofInstant(d06, ZoneId.systemDefault());
+    LocalDateTime r4 = LocalDateTime.ofInstant(d06, ZoneId.of("Portugal"));
+
     System.out.println("D01 = " + d01);
     System.out.println("D02 = " + d02);
     System.out.println("D03 = " + d03);
@@ -34,5 +44,21 @@ public class App {
     System.out.println("D09 = " + d09);
     System.out.println("D10 = " + d10);
     System.out.println("D11 = " + d11);
+    System.out.println("D12 = " + d04.format(fmt3));
+    System.out.println("D13 = " + fmt3.format(d04));
+    System.out.println("D14 = " + fmt4.format(d05));
+    System.out.println("D14 = " + fmt5.format(d06));
+    System.out.println("D15 = " + fmt5.format(d06));
+    System.out.println("R1 = " + r1);
+    System.out.println("R2 = " + r2);
+    System.out.println("R3 = " + r3);
+    System.out.println("R4 = " + r4);
+    System.out.println("D04 DIA = " + d04.getDayOfMonth());
+    System.out.println("D04 MES = " + d04.getMonthValue());
+    System.out.println("D04 ANO = " + d04.getYear());
+
+    System.out.println("D05 HORA = " + d05.getHour());
+    System.out.println("D05 MINUTE = " + d05.getMinute());
+
   }
 }
