@@ -13,9 +13,6 @@ public class HourContract {
     this.hours = hours;
   }
 
-  public HourContract() {
-  }
-
   public Date getDate() {
     return date;
   }
