@@ -8,7 +8,7 @@ import java.util.List;
 import entities.enums.OrderStatus;
 
 public class Order {
-  private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+  private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
   private Date moment = new Date();
   private OrderStatus status;
