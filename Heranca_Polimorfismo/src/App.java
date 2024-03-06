@@ -1,19 +1,15 @@
 import entities.Account;
-import entities.BusinessAccount;
 import entities.SavingsAccount;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    Account acc1 = new Account(1001, "Rodrigo", 1000.00);
-    acc1.withdraw(200.00);
-    System.out.println(acc1.getBalance());
+    Account x = new Account(1020, "Alex", 1000.0);
+    Account y = new SavingsAccount(1023, "Maria", 1000.0, 0.01);
 
-    Account acc2 = new SavingsAccount(1002, "Maria", 1000.00, 0.01);
-    acc2.withdraw(200.00);
-    System.out.println(acc2.getBalance());
+    x.withdraw(50.0);
+    y.withdraw(50.0);
 
-    Account acc3 = new BusinessAccount(1003, "Alex ", 1000.00, 500.00);
-    acc3.withdraw(200.00);
-    System.out.println(acc3.getBalance());
+    System.out.println(x.getBalance());
+    System.out.println(y.getBalance());
   }
 }
