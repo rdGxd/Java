@@ -1,6 +1,7 @@
 package entities;
 
-public class SavingsAccount extends Account {
+// Ao colocar a palavra FINAL você indica que essa classe nao pode ser herdada
+public final class SavingsAccount extends Account {
   private Double interestRate;
 
   public SavingsAccount() {
@@ -25,7 +26,8 @@ public class SavingsAccount extends Account {
   }
 
   @Override // Informando que uma sobreposição
-  public void withdraw(double amount) {
+  // A palavra final no método indicia que o método nao pode ser sobreposto
+  public final void withdraw(double amount) {
     balance -= amount;
   }
 }
