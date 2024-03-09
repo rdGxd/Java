@@ -3,6 +3,18 @@ import java.util.Scanner;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    method1();
+    System.out.println("End of program");
+  }
+
+  public static void method1() {
+    System.out.println("*****METHOD1 START*****");
+    method2();
+    System.out.println("*****METHOD1 END*****");
+  }
+
+  public static void method2() {
+    System.out.println("*****METHOD2 START*****");
     Scanner sc = new Scanner(System.in);
 
     try {
@@ -12,12 +24,13 @@ public class App {
 
     } catch (ArrayIndexOutOfBoundsException e) {
       System.out.println("Invalid position!");
+      e.printStackTrace(); // Exibir o passo a passo de como houve o erro
+      sc.next();
     } catch (InputMismatchException e) {
       System.out.println("Input error!");
     }
 
-    System.out.println("End of program");
-
     sc.close();
+    System.out.println("*****METHOD2 END*****");
   }
 }
