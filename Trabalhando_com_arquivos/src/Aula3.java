@@ -1,8 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class App {
-  public static void main(String[] args) throws Exception {
+public class Aula3 {
+  public static void aula3(String[] args) throws Exception {
     // Processo Melhorado
     String path = "C:\\Users\\rodri\\Documents\\in.txt";
 
