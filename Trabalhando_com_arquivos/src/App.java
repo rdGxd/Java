@@ -1,22 +1,32 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.File;
+import java.util.Scanner;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    // Criando o arquivo e gravando os dados nele
-    String[] lines = new String[] { "Good morning", "Good afternoon", "Good night" };
+    // Manipulando pastas com file
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter a folder path: ");
+    String strPath = sc.nextLine();
 
-    String path = "C:\\Users\\rodri\\Documents\\out.txt";
-
-    // Quando colocado o parâmetro TRUE ele apenas acrescenta ao arquivo e nao recria ele
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
-      for (String line : lines) {
-        bw.write(line);
-        bw.newLine();
-      }
-    } catch (IOException e) {
-      e.printStackTrace();
+    // Pegando as pastas
+    File path = new File(strPath);
+    File[] folders = path.listFiles(File::isDirectory);
+    System.out.println("FOLDERS:");
+    for (File folder : folders) {
+      System.out.println(folder);
     }
+
+    // Pegando os arquivos
+    File[] files = path.listFiles(File::isFile);
+    System.out.println("FILES:");
+    for (File file : files) {
+      System.out.println(file);
+    }
+
+    // Criando uma subpasta
+    boolean success = new File(strPath + "\\subdir").mkdir();
+    System.out.println("Directory created successfully: " + success);
+
+    sc.close();
   }
 }
