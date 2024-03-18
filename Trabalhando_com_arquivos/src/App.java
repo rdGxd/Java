@@ -1,20 +1,22 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    // Processo Melhorado
-    String path = "C:\\Users\\rodri\\Documents\\in.txt";
+    // Criando o arquivo e gravando os dados nele
+    String[] lines = new String[] { "Good morning", "Good afternoon", "Good night" };
 
-    try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-      String line = br.readLine();
+    String path = "C:\\Users\\rodri\\Documents\\out.txt";
 
-      while (line != null) {
-        System.out.println(line);
-        line = br.readLine();
+    // Quando colocado o parâmetro TRUE ele apenas acrescenta ao arquivo e nao recria ele
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
+      for (String line : lines) {
+        bw.write(line);
+        bw.newLine();
       }
-    } catch (Exception e) {
-      System.out.println("ERROR: " + e.getMessage());
+    } catch (IOException e) {
+      e.printStackTrace();
     }
   }
 }
