@@ -2,8 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class App {
-  public static void main(String[] args) throws Exception {
+public class Aula2 {
+  public static void aula2(String[] args) throws Exception {
     // PROCESSO MANUAL
     String path = "C:\\Users\\rodri\\Documents\\in.txt";
     FileReader fr = null;
