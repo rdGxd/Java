@@ -23,12 +23,12 @@ public class App {
     // Lendo o arquivo
     try (BufferedReader br = new BufferedReader(new FileReader(strPath))) {
       path = new File(strPath);
-      sc = new Scanner(path);
+      String itemCsv = br.readLine();
 
-      while (sc.hasNextLine()) {
-        String[] newName = sc.nextLine().split(",");
+      while (itemCsv != null) {
+        String[] newName = itemCsv.split(",");
         list.add(new Produto(newName[0], Double.parseDouble(newName[1]), Integer.parseInt(newName[2])));
-
+        itemCsv = br.readLine();
       }
       new File(path.getParent() + "\\out").mkdir();
     } catch (IOException e) {
@@ -36,7 +36,8 @@ public class App {
     }
 
     // Escrevendo o novo arquivo
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter(path.getParent() + "\\out" + "\\summary.csv"))) {
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter(path.getParent() +
+        "\\out" + "\\summary.csv"))) {
       for (Produto item : list) {
         bw.write(item.getName() + "," + String.format("%.2f", item.total()));
         bw.newLine();
