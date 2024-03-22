@@ -1,8 +1,8 @@
 package entities;
 
 public class Employee implements Comparable<Employee> {
-	private String name;
-	private Double salary;
+	private final String name;
+	private final Double salary;
 
 	public Employee(String name, Double salary) {
 		this.name = name;
