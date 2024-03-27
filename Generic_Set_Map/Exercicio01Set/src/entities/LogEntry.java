@@ -16,10 +16,6 @@ public class LogEntry {
         return username;
     }
 
-    public Date getMoment() {
-        return moment;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
