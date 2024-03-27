@@ -30,7 +30,7 @@ public class Main {
                 System.out.println(s + ": " + result.get(s));
             }
         } catch (IOException e)  {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error:" + e.getMessage());
         }
         sc.close();
     }
