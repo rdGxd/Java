@@ -7,7 +7,7 @@ public class Demo1 {
 
         // HashSet é a mais rápida só que ele nao garante a ordem
         // TreeSet ele ordena os dados
-        // LinkedHasset mantem a ordem
+        // LinkedHasset mantem a ordem e velocidade intermediaria
 
         set.add("Tv");
         set.add("Tablet");
